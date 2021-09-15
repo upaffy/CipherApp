@@ -4,14 +4,49 @@
 //
 //  Created by Pavlentiy on 13.09.2021.
 //
+import Foundation
 
 class RSA {
+    // Convert each letter in the plaintext to numbers based on
+    // the character using a^key mod n
     func encrypt(_ plainText: String, with privateKey: (Int, Int)) -> [Int] {
-        [0]
+        let (key, n) = privateKey
+        
+        var cipherText: [Int] = []
+        
+        for char in plainText {
+            let degree = pow(Double(char.asciiValue ?? 0), Double(key))
+            
+            guard !(degree.isNaN || degree.isInfinite) else {
+                return [0]
+            }
+            
+            let encodedAsciiValue = Int(degree) % n
+            cipherText.append(encodedAsciiValue)
+        }
+        
+        return cipherText
     }
     
     func decrypt(_ cipherText: [Int], with publicKey: (Int, Int)) -> String {
-        ""
+        let (key, n) = publicKey
+        
+        var plainText = ""
+        
+        // Generate the plaintext based on the ciphertext and key using a^key mod n
+        for encodedNumber in cipherText {
+            let degree = pow(Double(encodedNumber), Double(key))
+            
+            guard !(degree.isNaN || degree.isInfinite) else {
+                return ""
+            }
+            
+            let decodedAsciiValue = Int(degree) % n
+            
+            plainText += String(Unicode.Scalar(decodedAsciiValue) ?? " ")
+        }
+        
+        return plainText
     }
     
     func generateKeyPair(using x: Int, and y: Int) -> (publicKey: (Int, Int), privateKey: (Int, Int), CompletionStatus) {
