@@ -9,40 +9,27 @@ import Foundation
 class RSA {
     // Convert each letter in the plaintext to numbers based on
     // the character using a^key mod n
-    func encrypt(_ plainText: String, with privateKey: (Int, Int)) -> [Int] {
-        let (key, n) = privateKey
+    func encrypt(_ plainText: String, with publicKey: (Int, Int)) -> [Int] {
         
+        let (key, n) = publicKey
         var cipherText: [Int] = []
         
         for char in plainText {
-            let degree = pow(Double(char.asciiValue ?? 0), Double(key))
-            
-            guard !(degree.isNaN || degree.isInfinite) else {
-                return [0]
-            }
-            
-            let encodedAsciiValue = Int(degree) % n
+            let encodedAsciiValue = findRemainder(of: Int(char.asciiValue ?? 1), toPowerOf: key, dividedBy: n)
             cipherText.append(encodedAsciiValue)
         }
         
         return cipherText
     }
     
-    func decrypt(_ cipherText: [Int], with publicKey: (Int, Int)) -> String {
-        let (key, n) = publicKey
+    func decrypt(_ cipherText: [Int], with privateKey: (Int, Int)) -> String {
         
+        let (key, n) = privateKey
         var plainText = ""
         
         // Generate the plaintext based on the ciphertext and key using a^key mod n
         for encodedNumber in cipherText {
-            let degree = pow(Double(encodedNumber), Double(key))
-            
-            guard !(degree.isNaN || degree.isInfinite) else {
-                return ""
-            }
-            
-            let decodedAsciiValue = Int(degree) % n
-            
+            let decodedAsciiValue = findRemainder(of: encodedNumber, toPowerOf: key, dividedBy: n)
             plainText += String(Unicode.Scalar(decodedAsciiValue) ?? " ")
         }
         
@@ -50,17 +37,17 @@ class RSA {
     }
     
     func generateKeyPair(using x: Int, and y: Int) -> (publicKey: (Int, Int), privateKey: (Int, Int), CompletionStatus) {
+        
         var completionStatus = CompletionStatus.ok
         var publicKey = (0, 0)
         var privateKey = (0, 0)
         
         if !isPrime(x) || !isPrime(y) {
             completionStatus = .error(title: "Ooops", body: "Both numbers must be prime")
-            
             return (publicKey, privateKey, completionStatus)
+            
         } else if x == y {
             completionStatus = .error(title: "Ooops", body: "Numbers cannot be equal")
-            
             return (publicKey, privateKey, completionStatus)
         }
         
@@ -80,15 +67,25 @@ class RSA {
         // Use Extended Euclid's Algorithm to generate the private key
         let d = findMultiplicativeInverse(for: e, and: phi)
         
-        publicKey = (e, n)
-        privateKey = (d, n)
+        privateKey = (e, n)
+        publicKey = (d, n)
         
         return (publicKey, privateKey, completionStatus)
     }
     
+    enum CompletionStatus {
+        case ok
+        case error(title: String, body: String)
+    }
+}
+
+
+// MARK: - Private methods
+extension RSA {
     // Euclid's extended algorithm for finding the multiplicative inverse of two numbers.
     // In other words, we are looking for d such that d * e mod phi = 1
     private func findMultiplicativeInverse(for e: Int, and phi: Int) -> Int {
+        
         let phiInitial = phi
         
         // values ​​from formula
@@ -156,8 +153,23 @@ class RSA {
         }
     }
     
-    enum CompletionStatus {
-        case ok
-        case error(title: String, body: String)
+    private func findRemainder(of base: Int, toPowerOf exponent: Int, dividedBy modulus: Int) -> Int {
+        
+        guard base > 0 && exponent >= 0 && modulus > 0
+            else { return -1 }
+
+        var base = base
+        var exponent = exponent
+        var result = 1
+
+        while exponent > 0 {
+            if exponent % 2 == 1 {
+                result = (result * base) % modulus
+            }
+            base = (base * base) % modulus
+            exponent = exponent / 2
+        }
+
+        return result
     }
 }
