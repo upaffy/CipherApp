@@ -65,7 +65,11 @@ class RSA {
         }
         
         // Use Extended Euclid's Algorithm to generate the private key
-        let d = findMultiplicativeInverse(for: e, and: phi)
+        var d = findMultiplicativeInverse(for: e, and: phi)
+        
+        while e == d {
+            ((d, _), (e, _), completionStatus) = generateKeyPair(using: x, and: y)
+        }
         
         privateKey = (e, n)
         publicKey = (d, n)
