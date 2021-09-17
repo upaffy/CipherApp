@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		353FF68A26F3A8FA00666D92 /* Atbach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353FF68926F3A8FA00666D92 /* Atbach.swift */; };
 		E935EE8926EFBFA5008C178A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EE8826EFBFA5008C178A /* AppDelegate.swift */; };
 		E935EE8B26EFBFA5008C178A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EE8A26EFBFA5008C178A /* SceneDelegate.swift */; };
 		E935EE8D26EFBFA5008C178A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EE8C26EFBFA5008C178A /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		353FF68926F3A8FA00666D92 /* Atbach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atbach.swift; sourceTree = "<group>"; };
 		E935EE8526EFBFA5008C178A /* CipherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CipherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E935EE8826EFBFA5008C178A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E935EE8A26EFBFA5008C178A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		E935EE8726EFBFA5008C178A /* CipherApp */ = {
 			isa = PBXGroup;
 			children = (
-				E935EEA026EFD215008C178A /* EncryptionAlgorithms */,
+				353FF68926F3A8FA00666D92 /* Atbach.swift */,
 				E935EE9D26EFD1C2008C178A /* ViewControllers */,
 				E935EE9E26EFD1CF008C178A /* Storyboards */,
 				E935EE9F26EFD1DE008C178A /* Resources */,
@@ -98,13 +100,6 @@
 				E935EE9126EFBFA8008C178A /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E935EEA026EFD215008C178A /* EncryptionAlgorithms */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EncryptionAlgorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +174,7 @@
 			files = (
 				E935EE8D26EFBFA5008C178A /* ViewController.swift in Sources */,
 				E935EE8926EFBFA5008C178A /* AppDelegate.swift in Sources */,
+				353FF68A26F3A8FA00666D92 /* Atbach.swift in Sources */,
 				E935EE8B26EFBFA5008C178A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
