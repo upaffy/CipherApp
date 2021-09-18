@@ -56,7 +56,6 @@
 		E935EE8726EFBFA5008C178A /* CipherApp */ = {
 			isa = PBXGroup;
 			children = (
-				E935EEA026EFD215008C178A /* EncryptionAlgorithms */,
 				E935EE9D26EFD1C2008C178A /* ViewControllers */,
 				E935EE9E26EFD1CF008C178A /* Storyboards */,
 				E935EE9F26EFD1DE008C178A /* Resources */,
@@ -98,13 +97,6 @@
 				E935EE9126EFBFA8008C178A /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E935EEA026EFD215008C178A /* EncryptionAlgorithms */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = EncryptionAlgorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
