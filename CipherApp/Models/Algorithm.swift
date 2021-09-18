@@ -6,12 +6,18 @@
 //
 
 struct Algorithm {
-    let name: String
+    let name: algorithmName
     let algorithmClass: Any
     
     static func getAlgorithms() -> [Algorithm] {
-        [Algorithm(name: "RSA", algorithmClass: ""),
-        Algorithm(name: "Atbash", algorithmClass: ""),
-        Algorithm(name: "Caesar", algorithmClass: "")]
+        [Algorithm(name: .rsa, algorithmClass: ""),
+         Algorithm(name: .atbash, algorithmClass: ""),
+         Algorithm(name: .caesar, algorithmClass: "")]
+    }
+    
+    enum algorithmName: String {
+        case rsa = "RSA"
+        case atbash = "Atbash"
+        case caesar = "Caesar"
     }
 }
