@@ -22,11 +22,12 @@ class Atbash {
             reverseAlphabet.append(letter)
         }
         for charMessage in message {
-            let counter = 0
+            var counter = 0
             for letter in alphabet {
                 if String(charMessage) == letter {
                     cipherText.append(reverseAlphabet[counter])
                 }
+                counter += 1
             }
         }
         return cipherText
@@ -39,11 +40,12 @@ class Atbash {
             reverseAlphabet.append(letter)
         }
         for charCipherText in cipherText {
-            let counter = 0
+            var counter = 0
             for letter in reverseAlphabet {
                 if String(charCipherText) == letter {
                     decipherText.append(alphabet[counter])
                 }
+                counter += 1
             }
             
         }
