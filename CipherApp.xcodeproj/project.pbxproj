@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1A8B36B26F27235008364B3 /* AsciiFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A8B36A26F27235008364B3 /* AsciiFile.swift */; };
+		A181381A26F7231600C90247 /* AsciiFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A181381926F7231600C90247 /* AsciiFile.swift */; };
 		E935EE8926EFBFA5008C178A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EE8826EFBFA5008C178A /* AppDelegate.swift */; };
 		E935EE8B26EFBFA5008C178A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EE8A26EFBFA5008C178A /* SceneDelegate.swift */; };
 		E935EE8D26EFBFA5008C178A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EE8C26EFBFA5008C178A /* ViewController.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A1A8B36A26F27235008364B3 /* AsciiFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiFile.swift; sourceTree = SOURCE_ROOT; };
+		A181381926F7231600C90247 /* AsciiFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiFile.swift; sourceTree = "<group>"; };
 		E935EE8526EFBFA5008C178A /* CipherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CipherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E935EE8826EFBFA5008C178A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E935EE8A26EFBFA5008C178A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		E935EE8726EFBFA5008C178A /* CipherApp */ = {
 			isa = PBXGroup;
 			children = (
-				A1A8B36A26F27235008364B3 /* AsciiFile.swift */,
+				A181381926F7231600C90247 /* AsciiFile.swift */,
 				E935EE9D26EFD1C2008C178A /* ViewControllers */,
 				E935EE9E26EFD1CF008C178A /* Storyboards */,
 				E935EE9F26EFD1DE008C178A /* Resources */,
@@ -175,7 +175,7 @@
 				E935EE8D26EFBFA5008C178A /* ViewController.swift in Sources */,
 				E935EE8926EFBFA5008C178A /* AppDelegate.swift in Sources */,
 				E935EE8B26EFBFA5008C178A /* SceneDelegate.swift in Sources */,
-				A1A8B36B26F27235008364B3 /* AsciiFile.swift in Sources */,
+				A181381A26F7231600C90247 /* AsciiFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
