@@ -26,8 +26,12 @@ class Atbash {
             for letter in alphabet {
                 if String(charMessage) == letter {
                     cipherText.append(reverseAlphabet[counter])
+                    break
                 }
                 counter += 1
+            }
+            if counter == alphabet.count {
+                cipherText.append(charMessage)
             }
         }
         return cipherText
@@ -44,14 +48,18 @@ class Atbash {
             for letter in reverseAlphabet {
                 if String(charCipherText) == letter {
                     decipherText.append(alphabet[counter])
+                    break
                 }
                 counter += 1
             }
-            
+            if counter == alphabet.count {
+                decipherText.append(charCipherText)
+            }
         }
         return decipherText
     }
 }
+
 
 
 
