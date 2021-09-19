@@ -13,6 +13,7 @@
 		E935EE9026EFBFA5008C178A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E935EE8E26EFBFA5008C178A /* Main.storyboard */; };
 		E935EE9226EFBFA8008C178A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E935EE9126EFBFA8008C178A /* Assets.xcassets */; };
 		E935EE9526EFBFA8008C178A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E935EE9326EFBFA8008C178A /* LaunchScreen.storyboard */; };
+		E935EEA226EFD7C1008C178A /* RSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = E935EEA126EFD7C1008C178A /* RSA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E935EE9126EFBFA8008C178A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E935EE9426EFBFA8008C178A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E935EE9626EFBFA8008C178A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E935EEA126EFD7C1008C178A /* RSA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		E935EEA026EFD215008C178A /* EncryptionAlgorithms */ = {
 			isa = PBXGroup;
 			children = (
+				E935EEA126EFD7C1008C178A /* RSA.swift */,
 			);
 			path = EncryptionAlgorithms;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				E935EE8D26EFBFA5008C178A /* ViewController.swift in Sources */,
 				E935EE8926EFBFA5008C178A /* AppDelegate.swift in Sources */,
+				E935EEA226EFD7C1008C178A /* RSA.swift in Sources */,
 				E935EE8B26EFBFA5008C178A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
