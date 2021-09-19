@@ -11,16 +11,16 @@ import Foundation
 
 class Ascii {
     
+    var keyFoAsciiTable = 10
     
-    func encryption(_ encryptedValue: String, _ encryption: String ) -> String {
+    func encryption(_ encryptedValue: String) -> String {
         
         let encryptedValue = "Swift"
         var encryption = ""
         
         for cipher in encryptedValue {
-            let asciiValue = ((cipher.asciiValue ?? 0 ) + 3) % 127
-            encryption.append(Character(UnicodeScalar(asciiValue)))
-            print(encryption)
+            let asciiCode = (Int((cipher.asciiValue ?? 0 )) + keyFoAsciiTable) % 127
+            encryption.append(Character(UnicodeScalar(asciiCode)!))
         }
         return encryption
     }
@@ -28,14 +28,13 @@ class Ascii {
     //Метод для расшифровки
     
     
-    func decrypt(_ decryptionValue: String, decrypt: String) -> String {
+    func decrypt(_ decryptionValue: String) -> String {
         
         let decryptionValue = "Vzliw"
         var decryption = ""
         
         for decrypt in decryptionValue {
-            decryption.append(Character(UnicodeScalar((decrypt.asciiValue ?? 0 ) - 3)))
-            print(decryption)
+            decryption.append(Character(UnicodeScalar((decrypt.asciiValue ?? 0 ) - UInt8(keyFoAsciiTable))))
         }
         return decryption
     }
