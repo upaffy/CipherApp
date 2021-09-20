@@ -27,10 +27,19 @@ class AlgorithmsListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let algorithm = algorithmList[indexPath.row]
         if indexPath.row == 0 {
-            performSegue(withIdentifier: "GenerateKeyPairSegue", sender: nil)
+            performSegue(withIdentifier: "GenerateKeyPairSegue", sender: algorithm)
         } else {
-            performSegue(withIdentifier: "StartEncryptionSegue", sender: nil)
+            performSegue(withIdentifier: "StartEncryptionSegue", sender: algorithm)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let keyPairVC = segue.destination as? KeyPairViewController {
+            keyPairVC.algorithm = sender as? Algorithm
+        } else if let messageVC = segue.destination as? MessageViewController {
+            messageVC.algorithm = sender as? Algorithm
         }
     }
 }
