@@ -8,7 +8,7 @@
 class Vigenere {
     
     let asciiTableCount = 127
-    var keyFoAsciiTable = 100
+    var keyFoAsciiTable = 10
     
     func encryption(message: String) -> String {
         var encryption = ""

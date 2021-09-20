@@ -10,6 +10,18 @@ import UIKit
 class AlgorithmsListViewController: UITableViewController {
     let algorithmList = Algorithm.getAlgorithms()
     
+    override func viewDidLoad() {
+        let apologiesAlert = UIAlertController(
+            title: "Sorry🥺",
+            message: "Russian language is not supported yet\nOnly a message in English can be encrypted" ,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        apologiesAlert.addAction(okAction)
+        
+        present(apologiesAlert, animated: false)
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
