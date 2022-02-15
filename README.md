@@ -1,2 +1,2 @@
 # CipherApp
-An application that can encrypt / decrypt your application in various ways
+An application that can encrypt / decrypt your sentence in various ways
